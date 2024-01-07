@@ -153,4 +153,22 @@ public class Database {
             return value_set;
         }
     }
+    static void writeResult(String statement, String playername, int wpm, int acc, int score) {
+        String url = "jdbc:mysql://localhost:3306/fopdb";
+        String username = "root";
+        String password = "Simongohhawyee123456";
+
+        try {
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement stmt = con.prepareStatement(statement);
+            stmt.setString(1, playername);
+            stmt.setInt(2, wpm);
+            stmt.setInt(3, acc);
+            stmt.setInt(4, score);
+            stmt.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Couldn't write value!");
+        }
+    }
 }
