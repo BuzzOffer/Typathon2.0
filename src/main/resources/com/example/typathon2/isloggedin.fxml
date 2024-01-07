@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1f5c39;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LoginController">
+   <children>
+      <Label alignment="CENTER" layoutX="45.0" layoutY="33.0" prefHeight="166.0" prefWidth="509.0" text="You are already logged in!" textFill="#97baff">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="47.0" />
+         </font>
+      </Label>
+      <Label fx:id="loggedInAs" alignment="CENTER" layoutX="45.0" layoutY="72.0" prefHeight="166.0" prefWidth="509.0" text="as Username123" textFill="#99ffeb">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="backButton" layoutX="254.0" layoutY="238.0" mnemonicParsing="false" onAction="#homeButton" style="-fx-background-color: #44591c;" text="Go Back" textFill="#80f289">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="20.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

@@ -92,6 +92,12 @@ public class ProfilePage {
         }
         return (sum / count);
     }
+    public void updateStats() {
+        UserInfo.updateWpm10(username, calcWpm10());
+        UserInfo.updateWpmAll(username, calcWpmAll());
+        UserInfo.updateAcc10(username, calcAcc10());
+        UserInfo.updateAccAll(username, calcAccAll());
+    }
     public static boolean isLoggedIn() {
         return username != null;
     }

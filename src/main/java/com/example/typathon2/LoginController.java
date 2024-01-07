@@ -9,8 +9,10 @@ import javafx.stage.*;
 import javafx.util.Duration;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class LoginController {
+public class LoginController implements Initializable {
     @FXML
     private TextField emailField;
 
@@ -19,6 +21,9 @@ public class LoginController {
 
     @FXML
     private Label invalidMessage;
+
+    @FXML
+    private Label loggedInAs;
 
     @FXML
     private Button loginButton;
@@ -53,6 +58,14 @@ public class LoginController {
     private void createAccountButton(ActionEvent event) {
         changeScene("registerpage.fxml", event);
     }
+    @FXML
+    private void homeButton(ActionEvent event) {
+        changeScene("sample.fxml", event);
+    }
+    @FXML
+    public void displayLoggedInAs(String username) {
+        loggedInAs.setText("as " + username);
+    }
 
 
     private boolean isValid(String email, String password) {
@@ -72,5 +85,9 @@ public class LoginController {
             // Handle exception
             e.printStackTrace();
         }
+    }
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
     }
 }

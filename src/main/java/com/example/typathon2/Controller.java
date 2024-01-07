@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioMenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -42,11 +43,18 @@ public class Controller implements Initializable {
     @FXML
     private ImageView logo;
 
+
+
     @FXML
-    void guest(MouseEvent event) {
-
-        loadPage("Play As Guest");
-
+    void guest(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("profilepage.fxml"));
+        Parent root = loader.load();
+        ProfileController prof = loader.getController();
+        prof.loadProfileData();
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -72,8 +80,24 @@ public class Controller implements Initializable {
     }
 
     @FXML
-    void signin(MouseEvent event) {
-
+    void signin(MouseEvent event) throws IOException {
+        if (ProfilePage.isLoggedIn()) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("isloggedin.fxml"));
+            Parent root = loader.load();
+            LoginController login = loader.getController();
+            login.displayLoggedInAs(ProfilePage.getUsername());
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
+        else {
+            Parent root = loadPage("loginpage");
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     @FXML

@@ -20,7 +20,7 @@ public class ProfileController {
     public void exitButton(ActionEvent event) throws IOException {
         String fxmlFile;
         ProfilePage.setTempUser(ProfilePage.getCurrentUser());
-        Parent root = FXMLLoader.load(getClass().getResource("leaderboardsss.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
