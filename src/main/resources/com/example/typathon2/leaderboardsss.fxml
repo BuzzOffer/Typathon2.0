@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LeaderboardController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Leaderboard">
+         <font>
+            <Font name="Calibri" size="22.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutY="40.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane layoutY="1.0">
+               <children>
+                  <TableView fx:id="leaderboardTable" layoutY="42.0">
+                     <columns>
+                        <TableColumn fx:id="rankColumn" prefWidth="75.0" text="Rank" />
+                        <TableColumn fx:id="playerNameColumn" prefWidth="215.0" text="Name" />
+                        <TableColumn fx:id="wordsPerMinuteColumn" prefWidth="58.0" text="WPM" />
+                        <TableColumn fx:id="accuracyColumn" prefWidth="66.0" text="Accuracy" />
+                        <TableColumn fx:id="dateColumn" prefWidth="113.0" text="Date" />
+                        <TableColumn fx:id="timeColumn" prefWidth="72.0" text="Time" />
+                     </columns>
+                  </TableView>
+                  <MenuButton layoutX="528.0" layoutY="14.0" mnemonicParsing="false" text="Time">
+                     <items>
+                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="15 seconds" />
+                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="30 seconds" />
+                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="45 seconds" />
+                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="60 seconds" />
+                     </items>
+                  </MenuButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

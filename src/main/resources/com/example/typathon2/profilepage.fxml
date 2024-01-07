@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="507.0" prefWidth="934.0" style="-fx-background-color: linear-gradient(to left, #4f6654, #46595e);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.ProfileController">
+   <children>
+      <AnchorPane layoutX="38.0" layoutY="32.0" prefHeight="442.0" prefWidth="858.0" style="-fx-background-color: grey;">
+         <children>
+            <Label fx:id="playerName" layoutX="66.0" layoutY="14.0" prefHeight="54.0" prefWidth="474.0" text="Username123" textFill="#babaff">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="30.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="66.0" layoutY="79.0">
+               <children>
+                  <AnchorPane prefHeight="200.0" prefWidth="155.0" style="-fx-background-color: #5b695f;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="36.0" prefWidth="74.0" text="WPM" textFill="#70ff7f">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wpm_10" alignment="CENTER" layoutX="28.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#26ef70">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of last 10 games" textFill="#8cffe6">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="190.0" prefHeight="200.0" prefWidth="155.0" style="-fx-background-color: #5b695f;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="36.0" prefWidth="74.0" text="WPM" textFill="#70ff7f">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="wpm_all" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#26ef70">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of all time" textFill="#a6a6ff">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="380.0" prefHeight="200.0" prefWidth="155.0" style="-fx-background-color: #5b695f;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="36.0" prefWidth="74.0" text="ACC" textFill="#70ff7f">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="acc_10" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0%" textFill="#26ef70">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of last 10 games" textFill="#8cffe6">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="570.0" prefHeight="200.0" prefWidth="155.0" style="-fx-background-color: #5b695f;">
+                     <children>
+                        <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="36.0" prefWidth="74.0" text="ACC" textFill="#70ff7f">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="acc_all" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0%" textFill="#26ef70">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of all time" textFill="#a6a6ff">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <Label layoutX="66.0" layoutY="297.0" prefHeight="54.0" prefWidth="270.0" text="Date joined:" textFill="#df9699">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="30.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="351.0" prefHeight="54.0" prefWidth="270.0" text="Games completed: " textFill="#df9699">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateJoined" alignment="CENTER" layoutX="235.0" layoutY="297.0" prefHeight="54.0" prefWidth="155.0" text="1/1/2024" textFill="#df9699">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="30.0" />
+               </font>
+            </Label>
+            <Label fx:id="gamesCompleted" alignment="CENTER" layoutX="326.0" layoutY="351.0" prefHeight="54.0" prefWidth="50.0" text="24" textFill="#df9699">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="30.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="400.0" layoutY="297.0" prefHeight="121.0" prefWidth="391.0" style="-fx-background-color: #8a3636;">
+               <children>
+                  <Label layoutX="14.0" layoutY="17.0" prefHeight="88.0" prefWidth="233.0" text="Sudden Death Score:" textFill="#edabff">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="28.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="deathScore" alignment="CENTER" layoutX="266.0" layoutY="12.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#ffaeae">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <Button fx:id="profileBackButton" layoutX="725.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="Back" textFill="#942525">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="20.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

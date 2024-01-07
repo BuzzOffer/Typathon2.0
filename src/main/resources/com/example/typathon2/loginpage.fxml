@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="769.0" style="-fx-background-color: linear-gradient(to left, #90EE90, #a8f7f2);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LoginController">
+   <children>
+      <AnchorPane layoutX="121.0" layoutY="103.0" prefHeight="335.0" prefWidth="527.0" style="-fx-background-color: #ebf5f4;">
+         <children>
+            <Label alignment="CENTER" layoutX="176.0" layoutY="32.0" prefHeight="79.0" prefWidth="174.0" text="Login" textAlignment="CENTER">
+               <font>
+                  <Font name="Gill Sans MT" size="64.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.51136361468922" endY="0.9204545129429211" startX="0.4621212184429169" startY="0.12878786433826794">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.23273082077503204" green="0.08799999952316284" blue="0.8799999952316284" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.39625731110572815" green="0.5914385914802551" blue="0.8842105269432068" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <AnchorPane layoutX="54.0" layoutY="155.0">
+               <children>
+                  <Label prefHeight="22.0" prefWidth="62.0" text="Email:">
+                     <font>
+                        <Font name="Bell MT" size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="emailField" layoutX="80.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="340.0">
+                     <font>
+                        <Font name="Arial" size="12.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutY="50.0" prefHeight="22.0" prefWidth="80.0" text="Password:">
+                     <font>
+                        <Font name="Bell MT" size="16.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="passwordField" layoutX="80.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="340.0" />
+               </children>
+            </AnchorPane>
+            <Hyperlink layoutX="132.0" layoutY="232.0" onAction="#createAccountButton" text="Create an account" />
+            <Button layoutX="411.0" layoutY="243.0" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefWidth="62.0" text="Login" />
+            <Label fx:id="invalidMessage" alignment="CENTER" contentDisplay="CENTER" layoutX="165.0" layoutY="111.0" prefHeight="34.0" prefWidth="198.0" text="Invalid email or password!" textFill="#f70000" visible="false">
+               <font>
+                  <Font name="Times New Roman Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
