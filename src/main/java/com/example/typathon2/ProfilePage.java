@@ -92,4 +92,11 @@ public class ProfilePage {
         }
         return (sum / count);
     }
+    public static boolean isLoggedIn() {
+        return username != null;
+    }
+    public static boolean isCurrentUserProfile() {
+        return username.equals(current_user);
+    }
+
 }

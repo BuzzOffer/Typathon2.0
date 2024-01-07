@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.io.IOException;
+import java.util.Collections;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
 import java.time.LocalDate;
@@ -79,15 +80,24 @@ public class LeaderboardController {
     }
     // Load data for a specific mode
     private void loadDataForMode(String mode) {
-        // Clear existing data
-        leaderboardTable.getItems().clear();
+            // Clear existing data
+            leaderboardTable.getItems().clear();
 
-        // Load predefined data for the selected mode
-        List<LeaderboardEntry> leaderboardData = getPredefinedDataForMode(mode);
+            // Load predefined data for the selected mode
+            List<LeaderboardEntry> leaderboardData = getPredefinedDataForMode(mode);
 
-        // Populate the table
-        leaderboardTable.getItems().addAll(leaderboardData);
-    }
+            // Sort the leaderboardData based on WPM (Words Per Minute)
+            Collections.sort(leaderboardData, (entry1, entry2) -> Integer.compare(entry2.getWordsPerMinute(), entry1.getWordsPerMinute()));
+
+            // Assign ranks based on the sorted order
+            for (int i = 0; i < leaderboardData.size(); i++) {
+                leaderboardData.get(i).setRank(i + 1);
+            }
+
+            // Populate the table
+            leaderboardTable.getItems().addAll(leaderboardData);
+        }
+
     // Load predefined data for a specific mode
     private List<LeaderboardEntry> getPredefinedDataForMode(String mode) {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss");
@@ -95,34 +105,43 @@ public class LeaderboardController {
 
         switch (mode) {
             case "15 seconds":
-                data.add(createLeaderboardEntry(1, UserInfo.getUsernameFromData("Simon"), UserInfo.getWpm10("Simon"), 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry("simon", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
                 break;
             case "30 seconds":
-                data.add(createLeaderboardEntry(1, "win10", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry("win10", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry( "chai", 68, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
                 break;
             case "45 seconds":
-                data.add(createLeaderboardEntry(1, "syivv", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry("syivv", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry("win10", 99, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry( "chai", 68, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
                 break;
             case "60 seconds":
-                data.add(createLeaderboardEntry(1, "jun", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                data.add(createLeaderboardEntry("jun", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
                     break;
             default: // for errors
                 System.out.println("Error");
                 break;
         }
+        // Assign ranks based on the position in the TableView
+        for (int i = 0; i < data.size(); i++) {
+            data.get(i).setRank(i + 1);
+        }
         return data;
     }
-    private LeaderboardEntry createLeaderboardEntry(int rank, String playerName, int wordsPerMinute, double accuracy, LocalDate date, String time) {
+    private LeaderboardEntry createLeaderboardEntry(String playerName, int wordsPerMinute, double accuracy, LocalDate date, String time) {
         Label playerNameLabel = new Label(playerName);
         playerNameLabel.setOnMouseClicked(event -> openPlayerProfile(playerName, event));
 
-        return new LeaderboardEntry(rank, playerNameLabel, wordsPerMinute, accuracy, date, time);
+        return new LeaderboardEntry(playerNameLabel, wordsPerMinute, accuracy, date, time);
     }
 
     private void openPlayerProfile(String player_name, MouseEvent event) {
         // Implement logic to open the player's profile when player's name is clicked
-        ProfilePage.setCurrentUser(ProfilePage.getUsername());
-        ProfilePage.setTempUser(player_name);
+        if (!player_name.equals(ProfilePage.getUsername())) {
+            ProfilePage.setCurrentUser(ProfilePage.getUsername());
+            ProfilePage.setTempUser(player_name);
+        }
         accessProfile("profilepage.fxml", event);
     }
     @FXML
@@ -142,14 +161,14 @@ public class LeaderboardController {
 
     // Class representing a leaderboard entry
     public static class LeaderboardEntry {
-        private final int rank;
+        private int rank;
         private final Label playerName;
         private final int wordsPerMinute;
         private final double accuracy;
         private final String time;
         private final LocalDate date;
 
-        public LeaderboardEntry(int rank, Label playerName, int wordsPerMinute, double accuracy, LocalDate date, String time) {
+        public LeaderboardEntry(Label playerName, int wordsPerMinute, double accuracy, LocalDate date, String time) {
             this.rank = rank;
             this.playerName = playerName;
             this.wordsPerMinute = wordsPerMinute;
@@ -160,6 +179,10 @@ public class LeaderboardController {
 
         public int getRank() {
             return rank;
+        }
+
+        public void setRank(int rank) {
+            this.rank = rank;
         }
 
         public Label getPlayerName() {

@@ -128,7 +128,7 @@
                   </Label>
                </children>
             </AnchorPane>
-            <Button fx:id="profileBackButton" layoutX="725.0" layoutY="23.0" mnemonicParsing="false" style="-fx-background-color: cyan;" text="Back" textFill="#942525">
+            <Button fx:id="profileBackButton" layoutX="725.0" layoutY="23.0" mnemonicParsing="false" onAction="#exitButton" style="-fx-background-color: cyan;" text="Back" textFill="#942525">
                <font>
                   <Font name="Franklin Gothic Demi Cond" size="20.0" />
                </font>

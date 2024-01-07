@@ -171,4 +171,42 @@ public class Database {
             System.out.println("Couldn't write value!");
         }
     }
+    static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score) {
+        String url = "jdbc:mysql://localhost:3306/fopdb";
+        String username = "root";
+        String password = "Simongohhawyee123456";
+
+        try {
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement stmt = con.prepareStatement(statement);
+            stmt.setString(1, playername);
+            stmt.setInt(2, word_count);
+            stmt.setInt(3, wpm);
+            stmt.setInt(4, acc);
+            stmt.setInt(5, score);
+            stmt.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Couldn't write value!");
+        }
+    }
+    static void writeResult(String statement, String playername, int wpm, int acc, int score, String mode) {
+        String url = "jdbc:mysql://localhost:3306/fopdb";
+        String username = "root";
+        String password = "Simongohhawyee123456";
+
+        try {
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement stmt = con.prepareStatement(statement);
+            stmt.setString(1, playername);
+            stmt.setInt(2, wpm);
+            stmt.setInt(3, acc);
+            stmt.setInt(4, score);
+            stmt.setString(5, mode);
+            stmt.executeUpdate();
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("Couldn't write value!");
+        }
+    }
 }
