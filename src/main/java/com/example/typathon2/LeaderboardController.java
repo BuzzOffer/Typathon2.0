@@ -147,10 +147,12 @@ public class LeaderboardController {
     @FXML
     private void accessProfile(String fxmlFile, MouseEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("profilepage.fxml"));
+            Parent root = loader.load();
+            ProfileController prof = loader.getController();
+            prof.loadProfileData();
+            Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
-
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
