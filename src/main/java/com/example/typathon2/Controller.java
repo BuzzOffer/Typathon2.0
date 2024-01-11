@@ -103,7 +103,11 @@ public class Controller implements Initializable {
     @FXML
     void start(MouseEvent event) {
 
-        loadPage("Start Playing");
+        Parent root = loadPage("New_game");
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
 
     }
 

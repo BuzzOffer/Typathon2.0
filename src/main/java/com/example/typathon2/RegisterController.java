@@ -75,6 +75,10 @@ public class RegisterController {
         }
     }
     @FXML
+    public void loginPage(ActionEvent event) {
+        changeScene("loginpage.fxml", event);
+    }
+    @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
