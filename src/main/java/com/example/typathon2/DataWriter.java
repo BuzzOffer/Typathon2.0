@@ -13,8 +13,12 @@ public class DataWriter {
         Database.writeResult("insert into playerresults_quotes values (?, current_date(), current_time(), ?, ?, ?, ?)",
                 ProfilePage.getUsername(), word_count, wpm, acc, score);
     }
-    public static void storeResultsWords(int word_count, int wpm, int acc, String mode) {
+    public static void storeResultsDeath(int wpm, int acc, int score, String mode) {
         Database.writeResult("insert into playerresults_quotes values (?, current_date(), current_time(), ?, ?, ?, ?)",
-                ProfilePage.getUsername(), word_count, wpm, acc, mode);
+                ProfilePage.getUsername(),wpm, acc, score);
+    }
+    public static void storeGameHistory(String gamemode, int wpm, int acc, int score) {
+        Database.writeResult("insert into gamehistory values (?, ?, now(), ?, ?, ?",
+                ProfilePage.getUsername(), gamemode, wpm, acc, score);
     }
 }
