@@ -236,8 +236,6 @@ public class Database {
 
                 return new Object[]{playername, wpm, acc, date, time};
             }
-            else
-                System.out.println("Data not found");
             con.close();
         } catch (SQLException e) {
             System.out.println("SQL exception!");

@@ -23,9 +23,9 @@
                               <Font name="Franklin Gothic Demi Cond" size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="wpm_10" alignment="CENTER" layoutX="28.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#26ef70">
+                        <Label fx:id="wpm_10" alignment="CENTER" layoutX="22.0" layoutY="51.0" prefHeight="97.0" prefWidth="110.0" text="0" textFill="#26ef70">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="65.0" />
                            </font>
                         </Label>
                         <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of last 10 games" textFill="#8cffe6">
@@ -42,9 +42,9 @@
                               <Font name="Franklin Gothic Demi Cond" size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="wpm_all" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#26ef70">
+                        <Label fx:id="wpm_all" alignment="CENTER" layoutX="22.0" layoutY="51.0" prefHeight="97.0" prefWidth="110.0" text="0" textFill="#26ef70">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="65.0" />
                            </font>
                         </Label>
                         <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of all time" textFill="#a6a6ff">
@@ -61,12 +61,12 @@
                               <Font name="Franklin Gothic Demi Cond" size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="acc_10" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0%" textFill="#26ef70">
+                        <Label fx:id="acc_10" alignment="CENTER" layoutX="22.0" layoutY="51.0" prefHeight="97.0" prefWidth="110.0" text="0" textFill="#26ef70">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="65.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of last 10 games" textFill="#8cffe6">
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="\% of last 10 games" textFill="#8cffe6">
                            <font>
                               <Font name="Franklin Gothic Demi Cond" size="18.0" />
                            </font>
@@ -80,12 +80,12 @@
                               <Font name="Franklin Gothic Demi Cond" size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="acc_all" alignment="CENTER" layoutX="29.0" layoutY="51.0" prefHeight="97.0" prefWidth="97.0" text="0%" textFill="#26ef70">
+                        <Label fx:id="acc_all" alignment="CENTER" layoutX="22.0" layoutY="51.0" prefHeight="97.0" prefWidth="110.0" text="0" textFill="#26ef70">
                            <font>
-                              <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                              <Font name="Franklin Gothic Demi Cond" size="65.0" />
                            </font>
                         </Label>
-                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="of all time" textFill="#a6a6ff">
+                        <Label alignment="CENTER" layoutY="149.0" prefHeight="36.0" prefWidth="155.0" text="\% of all time" textFill="#a6a6ff">
                            <font>
                               <Font name="Franklin Gothic Demi Cond" size="18.0" />
                            </font>
@@ -121,9 +121,9 @@
                         <Font name="Franklin Gothic Demi Cond" size="28.0" />
                      </font>
                   </Label>
-                  <Label fx:id="deathScore" alignment="CENTER" layoutX="266.0" layoutY="12.0" prefHeight="97.0" prefWidth="97.0" text="0" textFill="#ffaeae">
+                  <Label fx:id="deathScore" alignment="CENTER" layoutX="242.0" layoutY="12.0" prefHeight="98.0" prefWidth="141.0" text="0" textFill="#ffaeae">
                      <font>
-                        <Font name="Franklin Gothic Demi Cond" size="70.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="60.0" />
                      </font>
                   </Label>
                </children>
