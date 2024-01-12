@@ -28,35 +28,76 @@ public class ProfileController {
     } // program exit button to exit profile pages back to leaderboard or home.
     @FXML
     public void setUsername() {
-        playerName.setText(ProfilePage.getUsername());
+        if (!ProfilePage.isLoggedIn()) {
+            setNotLoggedIn();
+        }
+        else {
+            playerName.setText(ProfilePage.getUsername());
+        }
     }
     @FXML
     public void setWpm10() {
-        wpm_10.setText(Integer.toString(ProfilePage.wpm10()));
+        if (!ProfilePage.isLoggedIn()) {
+            wpm_10.setText("0");
+        }
+        else {
+            wpm_10.setText(Integer.toString(ProfilePage.wpm10()));
+        }
+
     }
     @FXML
     public void setWpmAll() {
-        wpm_all.setText(Integer.toString(ProfilePage.wpmAll()));
+        if (!ProfilePage.isLoggedIn()) {
+            wpm_all.setText("0");
+        }
+        else {
+            wpm_all.setText(Integer.toString(ProfilePage.wpmAll()));
+        }
     }
     @FXML
     public void setAcc10() {
-        acc_10.setText(Integer.toString(ProfilePage.acc10()));
+        if (!ProfilePage.isLoggedIn()) {
+            acc_10.setText("0");
+        }
+        else {
+            acc_10.setText(Integer.toString(ProfilePage.acc10()));
+        }
     }
     @FXML
     public void setAccAll() {
-        acc_all.setText(Integer.toString(ProfilePage.accAll()));
+        if (!ProfilePage.isLoggedIn()) {
+            acc_all.setText("0");
+        }
+        else {
+            acc_all.setText(Integer.toString(ProfilePage.accAll()));
+        }
     }
     @FXML
     public void setDateJoined() {
-        dateJoined.setText(ProfilePage.dateJoined().toString());
+        if (!ProfilePage.isLoggedIn()) {
+            dateJoined.setText("-");
+        }
+        else {
+            dateJoined.setText(ProfilePage.dateJoined().toString());
+        }
     }
     @FXML
     public void setGamesCompleted() {
-        gamesCompleted.setText(Integer.toString(ProfilePage.testsCompleted()));
+        if (!ProfilePage.isLoggedIn()) {
+            gamesCompleted.setText("0");
+        }
+        else {
+            gamesCompleted.setText(Integer.toString(ProfilePage.testsCompleted()));
+        }
     }
     @FXML
     public void setDeathScore() {
-        deathScore.setText(""); //get sudden death score once database is linked
+        if (!ProfilePage.isLoggedIn()) {
+            deathScore.setText("0");
+        }
+        else {
+            deathScore.setText(Integer.toString(ProfilePage.deathScore()));
+        }
     }
     @FXML
     public void setNotLoggedIn() {
@@ -64,9 +105,6 @@ public class ProfileController {
     }
     @FXML
     public void loadProfileData() {
-        if (!ProfilePage.isLoggedIn()) {
-            setNotLoggedIn();
-        }
         setUsername();
         setWpm10();
         setWpmAll();

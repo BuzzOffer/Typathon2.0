@@ -1,5 +1,7 @@
 package com.example.typathon2;
 
+import javafx.scene.chart.PieChart;
+
 import java.sql.Date;
 
 public class ProfilePage {
@@ -42,6 +44,9 @@ public class ProfilePage {
 
     public static Date dateJoined() {
         return Database.getDate("select date_joined from playerstats where username=?", username);
+    }
+    public static int deathScore() {
+        return Database.getValue("select score from playerresults_death where username=?", username);
     }
 
     public static int calcWpm10() {
