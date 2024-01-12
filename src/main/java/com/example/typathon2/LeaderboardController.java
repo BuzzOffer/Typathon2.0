@@ -105,20 +105,45 @@ public class LeaderboardController {
 
         switch (mode) {
             case "15 seconds":
-                data.add(createLeaderboardEntry("simon", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                for (int i = 0; i < 9; i++) {
+                    if (getFor15(i) == null)
+                        break;
+                    else {
+                        data.add(createLeaderboardEntry(getFor15(i)[0].toString(), Integer.parseInt(getFor15(i)[1].toString()),
+                                Integer.parseInt(getFor15(i)[2].toString()), ((LocalDate) getFor15(i)[3]), getFor15(i)[4].toString()));
+                    }
+                }
                 break;
             case "30 seconds":
-                data.add(createLeaderboardEntry("win10", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
-                data.add(createLeaderboardEntry( "chai", 68, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                for (int i = 0; i < 9; i++) {
+                    if (getFor30(i) == null)
+                        break;
+                    else {
+                        data.add(createLeaderboardEntry(getFor30(i)[0].toString(), Integer.parseInt(getFor30(i)[1].toString()),
+                                Integer.parseInt(getFor30(i)[2].toString()), ((LocalDate) getFor30(i)[3]), getFor30(i)[4].toString()));
+                    }
+                }
                 break;
             case "45 seconds":
-                data.add(createLeaderboardEntry("syivv", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
-                data.add(createLeaderboardEntry("win10", 99, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
-                data.add(createLeaderboardEntry( "chai", 68, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
+                for (int i = 0; i < 9; i++) {
+                    if (getFor45(i) == null)
+                        break;
+                    else {
+                        data.add(createLeaderboardEntry(getFor45(i)[0].toString(), Integer.parseInt(getFor45(i)[1].toString()),
+                                Integer.parseInt(getFor45(i)[2].toString()), ((LocalDate) getFor45(i)[3]), getFor45(i)[4].toString()));
+                    }
+                }
                 break;
             case "60 seconds":
-                data.add(createLeaderboardEntry("jun", 57, 99.0, LocalDate.now(), LocalDateTime.now().format(timeFormatter)));
-                    break;
+                for (int i = 0; i < 9; i++) {
+                    if (getFor60(i) == null)
+                        break;
+                    else {
+                        data.add(createLeaderboardEntry(getFor60(i)[0].toString(), Integer.parseInt(getFor60(i)[1].toString()),
+                                Integer.parseInt(getFor60(i)[2].toString()), ((LocalDate) getFor60(i)[3]), getFor60(i)[4].toString()));
+                    }
+                }
+                break;
             default: // for errors
                 System.out.println("Error");
                 break;
