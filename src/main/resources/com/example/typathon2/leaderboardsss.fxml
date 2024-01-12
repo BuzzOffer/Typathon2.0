@@ -7,8 +7,8 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LeaderboardController">
    <children>
 
@@ -28,7 +28,9 @@
                         <TableColumn fx:id="timeColumn" prefWidth="100.0" text="Time" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
                      </columns>
                   </TableView>
-                  <MenuButton layoutX="528.0" layoutY="14.0" mnemonicParsing="false" text="Time" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: white;">
+                  <Button fx:id="backButton" layoutX="300.0" layoutY="30.0" mnemonicParsing="false" onAction="#goBack" text="Back" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: Black;">
+                  </Button>
+                  <MenuButton layoutX="528.0" layoutY="14.0" mnemonicParsing="false" text="Time" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 18.0; -fx-text-fill: white;">
                      <items>
                         <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="15 seconds" />
                         <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="30 seconds" />
