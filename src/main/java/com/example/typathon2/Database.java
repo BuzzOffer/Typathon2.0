@@ -1,6 +1,8 @@
 package com.example.typathon2;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Database {
@@ -153,7 +155,7 @@ public class Database {
             return value_set;
         }
     }
-    static void writeResult(String statement, String playername, int wpm, int acc, int score) {
+    static void writeResult(String statement, String playername, int wpm, int acc, int score, int duration) {
         String url = "jdbc:mysql://localhost:3306/fopdb";
         String username = "root";
         String password = "Simongohhawyee123456";
@@ -165,13 +167,14 @@ public class Database {
             stmt.setInt(2, wpm);
             stmt.setInt(3, acc);
             stmt.setInt(4, score);
+            stmt.setInt(5, duration);
             stmt.executeUpdate();
             con.close();
         } catch (SQLException e) {
             System.out.println("Couldn't write value!");
         }
     }
-    static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score) {
+    static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score, int duration) {
         String url = "jdbc:mysql://localhost:3306/fopdb";
         String username = "root";
         String password = "Simongohhawyee123456";
@@ -184,6 +187,7 @@ public class Database {
             stmt.setInt(3, wpm);
             stmt.setInt(4, acc);
             stmt.setInt(5, score);
+            stmt.setInt(6, duration);
             stmt.executeUpdate();
             con.close();
         } catch (SQLException e) {
@@ -209,5 +213,35 @@ public class Database {
         } catch (SQLException e) {
             System.out.println("Couldn't write value!");
         }
+    }
+    public static Object[] getForLB(int mode, int number) {
+        String url = "jdbc:mysql://localhost:3306/fopdb";
+        String username = "root";
+        String password = "Simongohhawyee123456";
+
+        try {
+            Connection con = DriverManager.getConnection(url, username, password);
+            PreparedStatement stmt = con.prepareStatement("select * from playerresults_normal where duration=? order by score desc limit ?, 1");
+            stmt.setInt(1, mode);
+            stmt.setInt(2, number);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                String playername = rs.getString(1);
+                int wpm = rs.getInt(2);
+                int acc = rs.getInt(3);
+                Timestamp ts = rs.getTimestamp(5);
+                LocalDateTime ldt = ts.toLocalDateTime();
+                LocalDate date = ldt.toLocalDate();
+                String time = ldt.toLocalTime().toString();
+
+                return new Object[]{playername, wpm, acc, date, time};
+            }
+            else
+                System.out.println("Data not found");
+            con.close();
+        } catch (SQLException e) {
+            System.out.println("SQL exception!");
+        }
+        return null;
     }
 }

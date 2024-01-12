@@ -160,6 +160,19 @@ public class LeaderboardController {
             e.printStackTrace();
         }
     }
+    //methods to get values to leaderboard
+    public static Object[] getFor15(int number) {
+        return Database.getForLB(15, number);
+    }
+    public static Object[] getFor30(int number) {
+        return Database.getForLB(30, number);
+    }
+    public static Object[] getFor45(int number) {
+        return Database.getForLB(45, number);
+    }
+    public static Object[] getFor60(int number) {
+        return Database.getForLB(60, number);
+    }
 
     // Class representing a leaderboard entry
     public static class LeaderboardEntry {
