@@ -13,11 +13,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: linear-gradient(to left, #90EE90, #a8f7f2);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.RegisterController">
    <children>
-      <AnchorPane layoutX="72.0" layoutY="37.0" prefHeight="526.0" prefWidth="756.0" style="-fx-background-color: #ebf5f4;">
+      <AnchorPane layoutX="72.0" layoutY="37.0" prefHeight="526.0" prefWidth="756.0" style="-fx-background-color: #e2ffbd;">
          <children>
             <Label alignment="CENTER" layoutX="64.0" layoutY="31.0" prefHeight="76.0" prefWidth="626.0" text="Register for an account!" textAlignment="CENTER">
                <font>
-                  <Font name="Gill Sans MT" size="64.0" />
+                  <Font name="Franklin Gothic Demi Cond" size="64.0" />
                </font>
                <textFill>
                   <LinearGradient endX="0.51136361468922" endY="0.9204545129429211" startX="0.4621212184429169" startY="0.12878786433826794">
@@ -90,6 +90,11 @@
             </Label>
             <Label alignment="CENTER" layoutX="300.0" layoutY="425.0" prefHeight="26.0" prefWidth="154.0" text="Already have an account?" />
             <Hyperlink alignment="CENTER" layoutX="342.0" layoutY="444.0" onAction="#loginPage" prefHeight="34.0" prefWidth="70.0" text="Sign in" />
+            <Button fx:id="backButton" layoutX="32.0" layoutY="461.0" mnemonicParsing="false" onAction="#goBack" prefHeight="34.0" prefWidth="62.0" style="-fx-background-color: #ff4545;" text="Back" textFill="#93ffb5">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="17.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>

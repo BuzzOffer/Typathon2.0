@@ -79,6 +79,10 @@ public class RegisterController {
         changeScene("loginpage.fxml", event);
     }
     @FXML
+    public void goBack(ActionEvent event) {
+        changeScene("sample.fxml", event);
+    }
+    @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));

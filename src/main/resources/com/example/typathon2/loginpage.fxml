@@ -13,11 +13,11 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="769.0" style="-fx-background-color: linear-gradient(to left, #90EE90, #a8f7f2);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LoginController">
    <children>
-      <AnchorPane layoutX="121.0" layoutY="103.0" prefHeight="335.0" prefWidth="527.0" style="-fx-background-color: #ebf5f4;">
+      <AnchorPane layoutX="121.0" layoutY="103.0" prefHeight="335.0" prefWidth="527.0" style="-fx-background-color: #e2ffbd;">
          <children>
-            <Label alignment="CENTER" layoutX="176.0" layoutY="32.0" prefHeight="79.0" prefWidth="174.0" text="Login" textAlignment="CENTER">
+            <Label alignment="CENTER" layoutX="176.0" layoutY="32.0" prefHeight="79.0" prefWidth="174.0" text="Login" textAlignment="CENTER" AnchorPane.topAnchor="32.0">
                <font>
-                  <Font name="Gill Sans MT" size="64.0" />
+                  <Font name="Franklin Gothic Demi Cond" size="64.0" />
                </font>
                <textFill>
                   <LinearGradient endX="0.51136361468922" endY="0.9204545129429211" startX="0.4621212184429169" startY="0.12878786433826794">
@@ -63,6 +63,11 @@
                   <Font name="Times New Roman Bold" size="15.0" />
                </font>
             </Label>
+            <Button fx:id="backButton" layoutX="23.0" layoutY="278.0" mnemonicParsing="false" onAction="#goBack" prefHeight="34.0" prefWidth="62.0" style="-fx-background-color: #ff4545;" text="Back" textFill="#93ffb5">
+               <font>
+                  <Font name="Franklin Gothic Demi Cond" size="17.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
    </children>
