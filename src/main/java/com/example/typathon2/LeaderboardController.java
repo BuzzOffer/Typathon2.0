@@ -162,11 +162,18 @@ public class LeaderboardController {
 
     private void openPlayerProfile(String player_name, MouseEvent event) {
         // Implement logic to open the player's profile when player's name is clicked
-        if (!player_name.equals(ProfilePage.getUsername())) {
-            ProfilePage.setCurrentUser(ProfilePage.getUsername());
-            ProfilePage.setTempUser(player_name);
+        // makes sure the player_name is in the database, else won't do anything
+        if (!player_name.equals(ProfilePage.getProfUsername()) && player_name.equals(UserInfo.getUsernameFromData(player_name))) {
+            ProfilePage.setProfUsername(player_name);
+            accessProfile("profilepage.fxml", event);
         }
-        accessProfile("profilepage.fxml", event);
+        else if (!player_name.equals(UserInfo.getUsernameFromData(player_name))) {
+            System.out.println("Player not found in database!");
+        }
+        else {
+            accessProfile("profilepage.fxml", event);
+        }
+
     }
     @FXML
     private void accessProfile(String fxmlFile, MouseEvent event) {

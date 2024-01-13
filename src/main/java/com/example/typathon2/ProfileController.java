@@ -18,8 +18,7 @@ public class ProfileController {
     private Label playerName, wpm_10, wpm_all, acc_10, acc_all, dateJoined, gamesCompleted, deathScore;
     @FXML
     public void exitButton(ActionEvent event) throws IOException {
-        String fxmlFile;
-        ProfilePage.setTempUser(ProfilePage.getCurrentUser());
+        ProfilePage.setProfUsername(ProfilePage.getCurrentUser());
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
@@ -32,7 +31,7 @@ public class ProfileController {
             setNotLoggedIn();
         }
         else {
-            playerName.setText(ProfilePage.getUsername());
+            playerName.setText(ProfilePage.getProfUsername());
         }
     }
     @FXML

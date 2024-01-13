@@ -39,6 +39,7 @@ public class LoginController implements Initializable {
         if (!email.isEmpty() && !password.isEmpty() && isValid(email, password)) {
             changeScene("sample.fxml", event);
             ProfilePage.setUsername(email);
+            ProfilePage.setProfUsername(ProfilePage.getCurrentUser());
         } else {
             // Handle invalid login
             invalidMessage.setVisible(true);

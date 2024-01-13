@@ -85,7 +85,7 @@ public class Controller implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("isloggedin.fxml"));
             Parent root = loader.load();
             LoginController login = loader.getController();
-            login.displayLoggedInAs(ProfilePage.getUsername());
+            login.displayLoggedInAs(ProfilePage.getCurrentUser());
             Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);
@@ -103,7 +103,7 @@ public class Controller implements Initializable {
     @FXML
     void start(MouseEvent event) {
 
-        Parent root = loadPage("New_game");
+        Parent root = loadPage("NewGame");
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);
