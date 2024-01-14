@@ -81,7 +81,7 @@ public class HomeController implements Initializable {
     @FXML
     void signin(MouseEvent event) throws IOException {
         if (ProfilePage.isLoggedIn()) {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("isloggedin.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Views/isloggedin.fxml"));
             Parent root = loader.load();
             LoginController login = loader.getController();
             login.displayLoggedInAs(ProfilePage.getCurrentUser());
