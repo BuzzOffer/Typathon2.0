@@ -27,8 +27,6 @@ public class LoginController implements Initializable {
     @FXML
     private Label loggedInAs;
 
-    @FXML
-    private Button loginButton;
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
