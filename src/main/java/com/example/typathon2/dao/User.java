@@ -1,4 +1,4 @@
-package com.example.typathon2;
+package com.example.typathon2.dao;
 
 import java.io.*;
 public class User {
@@ -25,15 +25,5 @@ public class User {
             System.out.println("Problem with writing info");
         }
 
-    }
-
-    public void storeUserStats() {
-        try {
-            PrintWriter outputStream = new PrintWriter(new FileOutputStream("userstats.txt", true));
-            outputStream.printf("%s,%d,%d,%d,%d%n", this.username, this.avg_wpm10, this.avg_wpm_all, this.accuracy10, this.accuracy_all);
-            outputStream.close();
-        } catch (IOException e) {
-            System.out.println("Problem with writing stats");
-        }
     }
 }

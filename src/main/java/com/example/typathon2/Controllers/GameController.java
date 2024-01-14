@@ -1,4 +1,4 @@
-package com.example.typathon2;
+package com.example.typathon2.Controllers;
 
 import java.io.BufferedReader;
 import java.io.File;

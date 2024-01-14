@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class Database {
-    static int getValue(String statement, String playername) {
+    public static int getValue(String statement, String playername) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -21,7 +21,7 @@ public class Database {
         }
     }
 
-    static String getString(String statement, String playername) {
+    public static String getString(String statement, String playername) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -36,7 +36,7 @@ public class Database {
         }
     }
 
-    static Date getDate(String statement, String playername) {
+    public static Date getDate(String statement, String playername) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -51,7 +51,7 @@ public class Database {
         }
     }
 
-    static void updateValue(String statement, String playername, int new_value) {
+    public static void updateValue(String statement, String playername, int new_value) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -64,7 +64,7 @@ public class Database {
         }
     }
 
-    static void newUser(String playername) {
+    public static void newUser(String playername) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement("insert into playerstats values (?, curdate(), 0, 0, 0, 0, 0)");
@@ -126,7 +126,7 @@ public class Database {
             return value_set;
         }
     }
-    static void writeResult(String statement, String playername, int wpm, int acc, int score, int duration) {
+    public static void writeResult(String statement, String playername, int wpm, int acc, int score, int duration) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -141,7 +141,7 @@ public class Database {
             System.out.println("Couldn't write value!");
         }
     }
-    static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score, int duration) {
+    public static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score, int duration) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
@@ -158,7 +158,7 @@ public class Database {
         }
     }
 
-    static void writeResult(String statement, String playername, String gamemode, int wpm, int acc, int score) {
+    public static void writeResult(String statement, String playername, String gamemode, int wpm, int acc, int score) {
         try {
             Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);

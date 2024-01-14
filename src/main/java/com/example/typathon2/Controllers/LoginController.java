@@ -1,5 +1,7 @@
-package com.example.typathon2;
+package com.example.typathon2.Controllers;
 
+import com.example.typathon2.ProfilePage;
+import com.example.typathon2.dao.UserInfo;
 import javafx.animation.TranslateTransition;
 import javafx.event.*;
 import javafx.fxml.*;

@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1f5c39;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.LoginController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #1f5c39;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.LoginController">
    <children>
       <Label alignment="CENTER" layoutX="45.0" layoutY="33.0" prefHeight="166.0" prefWidth="509.0" text="You are already logged in!" textFill="#97baff">
          <font>

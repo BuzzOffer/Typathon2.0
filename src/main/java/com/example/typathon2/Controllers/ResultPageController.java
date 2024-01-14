@@ -1,4 +1,4 @@
-package com.example.typathon2;
+package com.example.typathon2.Controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

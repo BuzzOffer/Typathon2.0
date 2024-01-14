@@ -1,6 +1,6 @@
 package com.example.typathon2;
 
-import javafx.scene.chart.PieChart;
+import com.example.typathon2.dao.UserInfo;
 
 import java.sql.Date;
 

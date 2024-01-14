@@ -1,5 +1,6 @@
-package com.example.typathon2;
+package com.example.typathon2.Controllers;
 
+import com.example.typathon2.ProfilePage;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;

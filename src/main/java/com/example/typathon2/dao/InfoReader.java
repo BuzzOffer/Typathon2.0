@@ -1,4 +1,4 @@
-package com.example.typathon2;
+package com.example.typathon2.dao;
 
 import java.io.*;
 import java.util.Scanner;
@@ -18,6 +18,6 @@ public class InfoReader {
         } catch (IOException e) {
             System.out.println("Problem with input!");
         }
-        return "com.example.typathon2.User not found!";
+        return "com.example.typathon2.dao.User not found!";
     }
 }

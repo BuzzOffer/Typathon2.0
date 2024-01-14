@@ -1,6 +1,6 @@
-package com.example.typathon2;
+package com.example.typathon2.dao;
 
-import javafx.scene.chart.PieChart;
+import com.example.typathon2.Database;
 
 public class UserInfo extends InfoReader {
         /*
@@ -10,7 +10,7 @@ public class UserInfo extends InfoReader {
     email = 2
      */
 
-    protected static String getPassword(String email) {
+    public static String getPassword(String email) {
         return find("userinfo.txt", email, 2, 1);
     }
     public static String getEmail(String username) {
