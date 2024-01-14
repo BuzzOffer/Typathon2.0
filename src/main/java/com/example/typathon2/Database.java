@@ -7,13 +7,8 @@ import java.util.ArrayList;
 
 public class Database {
     static int getValue(String statement, String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             ResultSet rs = stmt.executeQuery();
@@ -27,13 +22,8 @@ public class Database {
     }
 
     static String getString(String statement, String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             ResultSet rs = stmt.executeQuery();
@@ -47,13 +37,8 @@ public class Database {
     }
 
     static Date getDate(String statement, String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             ResultSet rs = stmt.executeQuery();
@@ -67,12 +52,8 @@ public class Database {
     }
 
     static void updateValue(String statement, String playername, int new_value) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setInt(1, new_value);
             stmt.setString(2, playername);
@@ -84,12 +65,8 @@ public class Database {
     }
 
     static void newUser(String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement("insert into playerstats values (?, curdate(), 0, 0, 0, 0, 0)");
             stmt.setString(1, playername);
             stmt.executeUpdate();
@@ -99,13 +76,10 @@ public class Database {
         }
     }
     static int[] getLast10(String statement, String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
         int[] value_set = new int[10];
 
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             ResultSet rs = stmt.executeQuery();
@@ -124,15 +98,12 @@ public class Database {
     }
 
     static int[] getValueSet(String statement, String playername) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
         int[] value_set = new int[10];
         int count = 0;
         int index = 0;
 
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             ResultSet rs = stmt.executeQuery();
@@ -156,12 +127,8 @@ public class Database {
         }
     }
     static void writeResult(String statement, String playername, int wpm, int acc, int score, int duration) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             stmt.setInt(2, wpm);
@@ -175,12 +142,8 @@ public class Database {
         }
     }
     static void writeResult(String statement, String playername, int word_count, int wpm, int acc, int score, int duration) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             stmt.setInt(2, word_count);
@@ -196,12 +159,8 @@ public class Database {
     }
 
     static void writeResult(String statement, String playername, String gamemode, int wpm, int acc, int score) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
-
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement(statement);
             stmt.setString(1, playername);
             stmt.setString(2, gamemode);
@@ -215,12 +174,9 @@ public class Database {
         }
     }
     public static Object[] getForLB(int mode, int number) {
-        String url = "jdbc:mysql://localhost:3306/fopdb";
-        String username = "root";
-        String password = "Simongohhawyee123456";
 
         try {
-            Connection con = DriverManager.getConnection(url, username, password);
+            Connection con = SQLConnector.startConnection();
             PreparedStatement stmt = con.prepareStatement("select * from playerresults_normal where duration=? order by score desc limit ?, 1");
             stmt.setInt(1, mode);
             stmt.setInt(2, number);
