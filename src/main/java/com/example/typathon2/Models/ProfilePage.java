@@ -1,5 +1,6 @@
-package com.example.typathon2;
+package com.example.typathon2.Models;
 
+import com.example.typathon2.Database;
 import com.example.typathon2.dao.UserInfo;
 
 import java.sql.Date;

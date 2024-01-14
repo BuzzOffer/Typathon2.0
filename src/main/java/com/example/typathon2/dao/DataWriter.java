@@ -1,7 +1,7 @@
 package com.example.typathon2.dao;
 
 import com.example.typathon2.Database;
-import com.example.typathon2.ProfilePage;
+import com.example.typathon2.Models.ProfilePage;
 
 public class DataWriter {
     public static void storeResultsNormal(int wpm, int acc, int score, int duration) {

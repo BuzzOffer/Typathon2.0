@@ -1,8 +1,7 @@
 package com.example.typathon2.Controllers;
 
-import com.example.typathon2.ProfilePage;
+import com.example.typathon2.Models.ProfilePage;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,7 +11,6 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Date;
 
 public class ProfileController {
     @FXML

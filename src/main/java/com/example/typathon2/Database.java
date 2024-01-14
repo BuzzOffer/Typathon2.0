@@ -75,7 +75,7 @@ public class Database {
             System.out.println("Couldn't write value!");
         }
     }
-    static int[] getLast10(String statement, String playername) {
+    public static int[] getLast10(String statement, String playername) {
         int[] value_set = new int[10];
 
         try {
@@ -97,7 +97,7 @@ public class Database {
         }
     }
 
-    static int[] getValueSet(String statement, String playername) {
+    public static int[] getValueSet(String statement, String playername) {
         int[] value_set = new int[10];
         int count = 0;
         int index = 0;

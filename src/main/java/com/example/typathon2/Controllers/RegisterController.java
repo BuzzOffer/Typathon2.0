@@ -1,7 +1,7 @@
 package com.example.typathon2.Controllers;
 
 import com.example.typathon2.Database;
-import com.example.typathon2.ProfilePage;
+import com.example.typathon2.Models.ProfilePage;
 import com.example.typathon2.dao.User;
 import com.example.typathon2.dao.UserInfo;
 import javafx.animation.TranslateTransition;

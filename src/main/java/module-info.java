@@ -14,4 +14,6 @@ module com.example.typathon2 {
     opens com.example.typathon2.Controllers to javafx.fxml;
     opens com.example.typathon2.dao to javafx.fxml;
     exports com.example.typathon2.dao;
+    exports com.example.typathon2.Models;
+    opens com.example.typathon2.Models to javafx.fxml;
 }
