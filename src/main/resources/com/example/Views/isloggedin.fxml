@@ -17,7 +17,7 @@
             <Font name="Franklin Gothic Demi Cond" size="24.0" />
          </font>
       </Label>
-      <Button fx:id="backButton" layoutX="254.0" layoutY="238.0" mnemonicParsing="false" onAction="#homeButton" style="-fx-background-color: #44591c;" text="Go Back" textFill="#80f289">
+      <Button fx:id="backButton" layoutX="254.0" layoutY="238.0" mnemonicParsing="false" onAction="#goBack" style="-fx-background-color: #44591c;" text="Go Back" textFill="#80f289">
          <font>
             <Font name="Franklin Gothic Demi Cond" size="20.0" />
          </font>

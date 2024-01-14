@@ -60,10 +60,6 @@ public class LoginController implements Initializable {
         changeScene("registerpage.fxml", event);
     }
     @FXML
-    private void homeButton(ActionEvent event) {
-        changeScene("sample.fxml", event);
-    }
-    @FXML
     public void displayLoggedInAs(String username) {
         loggedInAs.setText("as " + username);
     }
