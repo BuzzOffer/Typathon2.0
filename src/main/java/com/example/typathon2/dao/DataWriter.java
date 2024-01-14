@@ -1,6 +1,5 @@
 package com.example.typathon2.dao;
 
-import com.example.typathon2.Database;
 import com.example.typathon2.Models.ProfilePage;
 
 public class DataWriter {

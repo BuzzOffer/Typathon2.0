@@ -1,7 +1,5 @@
 package com.example.typathon2.dao;
 
-import com.example.typathon2.Database;
-
 public class UserInfo extends InfoReader {
         /*
     index of userinfo.txt:

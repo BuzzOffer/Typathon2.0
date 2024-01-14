@@ -1,4 +1,6 @@
-package com.example.typathon2;
+package com.example.typathon2.dao;
+
+import com.example.typathon2.SQLConnector;
 
 import java.sql.*;
 import java.time.LocalDate;
