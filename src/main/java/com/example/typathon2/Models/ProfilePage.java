@@ -44,7 +44,7 @@ public class ProfilePage {
         return Database.getDate("select date_joined from playerstats where username=?", profile_username);
     }
     public static int deathScore() {
-        return Database.getValue("select score from playerresults_death where username=?", profile_username);
+        return Database.getValue("select death_score from playerstats where username=?", profile_username);
     }
 
     public static int calcWpm10() {
@@ -95,11 +95,24 @@ public class ProfilePage {
         }
         return (sum / count);
     }
+    public static int calcAvgDeathScore() {
+        int[] values = Database.getValueSet("select score from playerresults_death where playername=? order by played_at desc", profile_username);
+        int sum = 0;
+        int count = 0;
+        for (int value : values) {
+            sum += value;
+            count++;
+            if (value <= 0)
+                count--;
+        }
+        return (sum / count);
+    }
     public void updateStats() {
         UserInfo.updateWpm10(profile_username, calcWpm10());
         UserInfo.updateWpmAll(profile_username, calcWpmAll());
         UserInfo.updateAcc10(profile_username, calcAcc10());
         UserInfo.updateAccAll(profile_username, calcAccAll());
+        UserInfo.updateDeathScore(profile_username, calcAvgDeathScore());
     }
     public static boolean isLoggedIn() {
         return profile_username != null;

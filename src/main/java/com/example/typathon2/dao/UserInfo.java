@@ -47,6 +47,9 @@ public class UserInfo extends InfoReader {
     public static void updateAccAll(String username, int value) {
         Database.updateValue("update playerstats set acc_all=? where username=?", username, value);
     }
+    public static void updateDeathScore(String username, int value) {
+        Database.updateValue("update playerstats set death_score=? where username=?", username, value);
+    }
 
     public static boolean emailInUse(String email) {
         return find("userinfo.txt", email, 2, 2).equals(email);

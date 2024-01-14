@@ -5,11 +5,6 @@ public class User {
     String username;
     String password;
     String email;
-    int avg_wpm10 = 0;
-    int avg_wpm_all = 0;
-    int accuracy10 = 0;
-    int accuracy_all = 0;
-
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;

@@ -69,7 +69,7 @@ public class Database {
     public static void newUser(String playername) {
         try {
             Connection con = SQLConnector.startConnection();
-            PreparedStatement stmt = con.prepareStatement("insert into playerstats values (?, curdate(), 0, 0, 0, 0, 0)");
+            PreparedStatement stmt = con.prepareStatement("insert into playerstats values (?, curdate(), 0, 0, 0, 0, 0, 0)");
             stmt.setString(1, playername);
             stmt.executeUpdate();
             con.close();

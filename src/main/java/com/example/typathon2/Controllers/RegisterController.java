@@ -35,7 +35,7 @@ public class RegisterController {
         String confirm_pass = confirmPass.getText();
 
         if (confirm_pass.equals(password) && !UserInfo.emailInUse(email) && !UserInfo.usernameInUse(username)) {    //add condition check for email in use and username in use
-            Database.newUser(username); //placeholder, add store user info method to write into text file
+            Database.newUser(username);
             User user = new User(username, password, email);
             user.storeUserInfo();
             ProfilePage.setUsername(email);
