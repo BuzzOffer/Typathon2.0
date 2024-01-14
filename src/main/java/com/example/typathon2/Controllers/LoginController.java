@@ -83,7 +83,7 @@ public class LoginController implements Initializable {
     @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/typathon2/" +fxmlFile));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/Views/" +fxmlFile));
             Scene scene = new Scene(root);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

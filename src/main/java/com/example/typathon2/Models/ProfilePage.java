@@ -113,6 +113,7 @@ public class ProfilePage {
         UserInfo.updateAcc10(profile_username, calcAcc10());
         UserInfo.updateAccAll(profile_username, calcAccAll());
         UserInfo.updateDeathScore(profile_username, calcAvgDeathScore());
+        UserInfo.updateTestsCompleted(profile_username, 1);
     }
     public static boolean isLoggedIn() {
         return profile_username != null;
