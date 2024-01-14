@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.LeaderboardController">
    <children>
-
-      <AnchorPane layoutY="35.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" style="-fx-background-color: #4f6654;">
+      <AnchorPane layoutY="35.0" style="-fx-background-color: #4f6654;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
-               <Label layoutX="14.0" layoutY="14.0" text="Leaderboard ♕" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 35.0; -fx-text-fill: black;" >
-               </Label>
-               <children>
-                  <TableView fx:id="leaderboardTable" VBox.vgrow="ALWAYS" style="-fx-background-color: #4f6654;">
-                     <columns>
-                        <TableColumn fx:id="rankColumn" prefWidth="75.0" text="Rank" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                        <TableColumn fx:id="playerNameColumn" prefWidth="215.0" text="Name" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                        <TableColumn fx:id="wordsPerMinuteColumn" prefWidth="100.0" text="WPM" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                        <TableColumn fx:id="accuracyColumn" prefWidth="90.0" text="Accuracy" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                        <TableColumn fx:id="dateColumn" prefWidth="113.0" text="Date" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                        <TableColumn fx:id="timeColumn" prefWidth="100.0" text="Time" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" />
-                     </columns>
-                  </TableView>
-                  <Button fx:id="backButton" layoutX="300.0" layoutY="30.0" mnemonicParsing="false" onAction="#goBack" text="Back" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: Black;">
-                  </Button>
-                  <MenuButton layoutX="528.0" layoutY="14.0" mnemonicParsing="false" text="Time" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 18.0; -fx-text-fill: white;">
-                     <items>
-                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="15 seconds" />
-                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="30 seconds" />
-                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="45 seconds" />
-                        <MenuItem onAction="#handleTimeSelection" mnemonicParsing="false" text="60 seconds" />
-                     </items>
-                  </MenuButton>
-               </children>
+            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="0.0">
+               <!-- Top Section -->
+               <HBox>
+                  <!-- Top Left Section -->
+                  <Label style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 35.0; -fx-text-fill: black;" text="Leaderboard ♕" />
+                  <Region HBox.hgrow="ALWAYS" />
+
+                  <!-- Top Right Section -->
+                  <HBox alignment="CENTER_RIGHT" spacing="10">
+                     <Button mnemonicParsing="false" onAction="#goBack" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: Black;" text="Back" />
+                     <MenuButton mnemonicParsing="false" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 18.0; -fx-text-fill: white;" text="Time">
+                        <items>
+                           <MenuItem mnemonicParsing="false" onAction="#handleTimeSelection" text="15 seconds" />
+                           <MenuItem mnemonicParsing="false" onAction="#handleTimeSelection" text="30 seconds" />
+                           <MenuItem mnemonicParsing="false" onAction="#handleTimeSelection" text="45 seconds" />
+                           <MenuItem mnemonicParsing="false" onAction="#handleTimeSelection" text="60 seconds" />
+                        </items>
+                     </MenuButton>
+                  </HBox>
+               </HBox>
+
+               <!-- TableView Section -->
+               <TableView fx:id="leaderboardTable" style="-fx-background-color: #4f6654;" VBox.vgrow="ALWAYS">
+                  <columns>
+                     <TableColumn fx:id="rankColumn" prefWidth="75.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="Rank" />
+                     <TableColumn fx:id="playerNameColumn" prefWidth="215.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="Name" />
+                     <TableColumn fx:id="wordsPerMinuteColumn" prefWidth="100.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="WPM" />
+                     <TableColumn fx:id="accuracyColumn" prefWidth="90.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="Accuracy" />
+                     <TableColumn fx:id="dateColumn" prefWidth="113.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="Date" />
+                     <TableColumn fx:id="timeColumn" prefWidth="100.0" style="-fx-font-family: 'Franklin Gothic Demi Cond'; -fx-font-size: 20.0; -fx-text-fill: black;" text="Time" />
+                  </columns>
+               </TableView>
             </VBox>
          </children>
       </AnchorPane>
