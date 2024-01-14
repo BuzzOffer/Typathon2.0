@@ -46,7 +46,7 @@ public class HomeController implements Initializable {
 
     @FXML
     void guest(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("profilepage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/typathon2/profilepage.fxml"));
         Parent root = loader.load();
         ProfileController prof = loader.getController();
         prof.loadProfileData();
@@ -113,7 +113,7 @@ public class HomeController implements Initializable {
     private Parent loadPage (String page){
    
         try {
-            return FXMLLoader.load(getClass().getResource(page+".fxml"));
+            return FXMLLoader.load(getClass().getResource("/com/example/typathon2/" + page+".fxml"));
         } catch (IOException ex) {
             Logger.getLogger(HomeController.class.getName()).log(Level.SEVERE, null, ex);
             return null;

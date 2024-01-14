@@ -89,7 +89,7 @@ public class RegisterController {
     @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource(fxmlFile));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/typathon2/" + fxmlFile));
             Scene scene = new Scene(root);
 
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

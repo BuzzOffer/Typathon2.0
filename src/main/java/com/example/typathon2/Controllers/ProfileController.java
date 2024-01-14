@@ -20,7 +20,7 @@ public class ProfileController {
     @FXML
     public void exitButton(ActionEvent event) throws IOException {
         ProfilePage.setProfUsername(ProfilePage.getCurrentUser());
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/example/typathon2/sample.fxml"));
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

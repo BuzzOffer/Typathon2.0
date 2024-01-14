@@ -181,7 +181,7 @@ public class LeaderboardController {
     @FXML
     private void accessProfile(String fxmlFile, MouseEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("profilepage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/typathon2/profilepage.fxml"));
             Parent root = loader.load();
             ProfileController prof = loader.getController();
             prof.loadProfileData();
@@ -197,7 +197,7 @@ public class LeaderboardController {
     @FXML
     public void goBack(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/typathon2/sample.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);
