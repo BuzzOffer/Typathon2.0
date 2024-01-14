@@ -22,5 +22,10 @@
             <Font name="Franklin Gothic Demi Cond" size="20.0" />
          </font>
       </Button>
+      <Button fx:id="logoutButton" layoutX="260.0" layoutY="293.0" mnemonicParsing="false" onAction="#logout" style="-fx-background-color: #ff8987;" text="Logout" textFill="#5c0961">
+         <font>
+            <Font name="Franklin Gothic Demi Cond" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

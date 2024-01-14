@@ -79,6 +79,12 @@ public class LoginController implements Initializable {
     private void goBack(ActionEvent event) {
         changeScene("sample.fxml", event);
     }
+    @FXML
+    private void logout(ActionEvent event) {
+        ProfilePage.setProfUsername(null);
+        ProfilePage.setNullUser();
+        changeScene("loginpage.fxml", event);
+    }
 
     @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {

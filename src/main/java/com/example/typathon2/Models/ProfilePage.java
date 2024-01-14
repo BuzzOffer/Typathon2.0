@@ -14,12 +14,14 @@ public class ProfilePage {
     public static String getCurrentUser() {
         return current_user;
     }
-
     public static void setProfUsername(String n) {
         profile_username = n;
     }
     public static void setUsername(String email) {
         current_user = UserInfo.getUsername(email);
+    }
+    public static void setNullUser() {
+        current_user = null;
     }
 
 
