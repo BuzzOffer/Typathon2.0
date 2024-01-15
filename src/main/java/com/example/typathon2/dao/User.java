@@ -2,9 +2,9 @@ package com.example.typathon2.dao;
 
 import java.io.*;
 public class User {
-    String username;
-    String password;
-    String email;
+    private String username;
+    private String password;
+    private String email;
     public User(String username, String password, String email) {
         this.username = username;
         this.password = password;
