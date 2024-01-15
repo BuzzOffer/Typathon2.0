@@ -11,7 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("game.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/example/Views/sample.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Typ-a-thon");
         stage.setScene(scene);

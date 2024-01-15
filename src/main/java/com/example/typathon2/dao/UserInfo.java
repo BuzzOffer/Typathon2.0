@@ -11,9 +11,6 @@ public class UserInfo extends InfoReader {
     public static String getPassword(String email) {
         return find("userinfo.txt", email, 2, 1);
     }
-    public static String getEmail(String username) {
-        return find("userinfo.txt", username, 0, 2);
-    }
     public static String getUsername(String email) {
         return find("userinfo.txt", email, 2, 0);
     }
