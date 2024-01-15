@@ -305,7 +305,7 @@ public class GameController implements Initializable {
 
     public void toMainMenu(ActionEvent ae) throws IOException {
         Main m = new Main();
-        m.changeScene("sample.fxml");
+        m.changeScene("homepage.fxml");
     }
 
     private void checkInput() {

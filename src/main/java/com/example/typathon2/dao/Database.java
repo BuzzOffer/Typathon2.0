@@ -1,11 +1,10 @@
 package com.example.typathon2.dao;
 
-import com.example.typathon2.SQLConnector;
+import com.example.typathon2.utils.SQLConnector;
 
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 
 public class Database {
     public static int getValue(String statement, String playername) {

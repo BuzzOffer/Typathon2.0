@@ -39,7 +39,7 @@ public class RegisterController {
             User user = new User(username, password, email);
             user.storeUserInfo();
             ProfilePage.setUsername(email);
-            changeScene("sample.fxml", event);
+            changeScene("homepage.fxml", event);
         }
         else if (!confirm_pass.equals(password)) {  //do else ifs for different invalidities
             invalidPass.setVisible(true);
@@ -84,7 +84,7 @@ public class RegisterController {
     }
     @FXML
     public void goBack(ActionEvent event) {
-        changeScene("sample.fxml", event);
+        changeScene("homepage.fxml", event);
     }
     @FXML
     public void changeScene(String fxmlFile, ActionEvent event) {

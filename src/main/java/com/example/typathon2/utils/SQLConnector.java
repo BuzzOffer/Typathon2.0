@@ -1,4 +1,4 @@
-package com.example.typathon2;
+package com.example.typathon2.utils;
 import java.net.CookieHandler;
 import java.sql.*;
 

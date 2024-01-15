@@ -37,7 +37,7 @@ public class LoginController implements Initializable {
 
         // If validation is successful, change the scene
         if (!email.isEmpty() && !password.isEmpty() && isValid(email, password)) {
-            changeScene("sample.fxml", event);
+            changeScene("homepage.fxml", event);
             ProfilePage.setUsername(email);
             ProfilePage.setProfUsername(ProfilePage.getCurrentUser());
         } else {
@@ -71,7 +71,7 @@ public class LoginController implements Initializable {
 
     @FXML
     private void goBack(ActionEvent event) {
-        changeScene("sample.fxml", event);
+        changeScene("homepage.fxml", event);
     }
     @FXML
     private void logout(ActionEvent event) {

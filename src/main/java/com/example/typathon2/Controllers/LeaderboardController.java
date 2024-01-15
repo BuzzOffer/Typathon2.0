@@ -197,7 +197,7 @@ public class LeaderboardController {
     @FXML
     public void goBack(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/com/example/Views/sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/com/example/Views/homepage.fxml"));
             Scene scene = new Scene(root);
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(scene);

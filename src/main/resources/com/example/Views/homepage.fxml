@@ -14,11 +14,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.HomeController">
+<VBox alignment="CENTER" prefWidth="752.0" style="-fx-background-color: #244538;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.HomeController">
    <children>
-      <BorderPane layoutX="200.0" layoutY="70.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="443.0" prefWidth="803.0">
          <top>
-            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
                <children>
                   <HBox layoutX="142.0" layoutY="20.0" prefHeight="42.0" prefWidth="476.0" AnchorPane.bottomAnchor="4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
                      <children>
@@ -51,16 +51,16 @@
                         </SplitMenuButton>
                      </children>
                   </HBox>
-                  <Pane layoutY="-4.0" prefHeight="35.0" prefWidth="651.0" style="-fx-background-color: #0a2463;" />
+                  <Pane layoutY="-4.0" prefHeight="35.0" prefWidth="651.0" style="-fx-background-color: #244538;" />
                </children>
             </AnchorPane>
          </top>
          <left>
-            <VBox prefHeight="334.0" prefWidth="146.0" style="-fx-background-color: #0a2463;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="334.0" prefWidth="146.0" style="-fx-background-color: #244538;" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="Home" mnemonicParsing="false" onMouseClicked="#home" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 2px 0px 2px 0px;" text="Home" textFill="WHITE">
                      <font>
-                        <Font name="Lucida Sans Demibold Italic" size="16.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="20.0" />
                      </font>
                      <VBox.margin>
                         <Insets top="20.0" />
@@ -71,23 +71,23 @@
                   </Button>
                   <Button fx:id="Start" layoutX="10.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#start" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Start Game" textFill="WHITE">
                      <font>
-                        <Font name="Lucida Sans Demibold Italic" size="16.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="20.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="SignIn" layoutX="10.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#signin" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Sign In / Register" textFill="WHITE">
+                  <Button fx:id="SignIn" layoutX="10.0" layoutY="88.0" mnemonicParsing="false" onMouseClicked="#signin" prefHeight="58.0" prefWidth="154.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Login / Register" textFill="WHITE">
                      <font>
-                        <Font name="Lucida Sans Demibold Italic" size="14.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="18.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="Guest" layoutX="10.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#guest" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Play As Guest" textFill="WHITE">
+                  <Button fx:id="Guest" layoutX="10.0" layoutY="147.0" mnemonicParsing="false" onMouseClicked="#profile" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Profile" textFill="WHITE">
                      <font>
-                        <Font name="Lucida Sans Italic" size="16.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="20.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
@@ -95,7 +95,7 @@
                   </Button>
                   <Button fx:id="Leaderboard" layoutX="10.0" layoutY="205.0" mnemonicParsing="false" onMouseClicked="#leaderboard" prefHeight="58.0" prefWidth="157.0" style="-fx-background-color: transparent; -fx-border-color: WHITE; -fx-border-width: 0px 0px 2px 0px;" text="Leaderboard" textFill="WHITE">
                      <font>
-                        <Font name="Lucida Sans Demibold Italic" size="16.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="20.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
@@ -106,20 +106,21 @@
             </VBox>
          </left>
          <center>
-            <AnchorPane fx:id="an" prefHeight="326.0" prefWidth="441.0" style="-fx-background-color: #3e92cc;" BorderPane.alignment="CENTER">
+            <AnchorPane fx:id="an" prefHeight="326.0" prefWidth="441.0" style="-fx-background-color: #2bba82;" BorderPane.alignment="CENTER">
                <children>
-                  <Text fill="#fffefe" layoutX="116.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Typathon">
+                  <Text fill="#fffefe" layoutX="120.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Typathon">
                      <font>
-                        <Font name="Lucida Sans Typewriter Bold" size="24.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="45.0" />
                      </font>
                   </Text>
-                  <Text fill="#fffdfd" layoutX="46.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test your speed and accuracy using Typathon">
+                  <Text fill="#fffdfd" layoutX="123.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Test your speed and accuracy using Typathon" textAlignment="CENTER" wrappingWidth="358.57818603515625">
                      <font>
-                        <Font name="Lucida Sans Typewriter Bold" size="16.0" />
+                        <Font name="Franklin Gothic Demi Cond" size="20.0" />
                      </font>
                   </Text>
-               </children></AnchorPane>
+               </children>
+            </AnchorPane>
          </center>
       </BorderPane>
    </children>
-</AnchorPane>
+</VBox>

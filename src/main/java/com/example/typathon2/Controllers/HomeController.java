@@ -45,7 +45,7 @@ public class HomeController implements Initializable {
 
 
     @FXML
-    void guest(MouseEvent event) throws IOException {
+    void profile(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/Views/profilepage.fxml"));
         Parent root = loader.load();
         ProfileController prof = loader.getController();
@@ -59,7 +59,7 @@ public class HomeController implements Initializable {
     @FXML
     void home(MouseEvent event) {
 
-       Parent root = loadPage("sample");
+       Parent root = loadPage("homepage");
        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
        Scene scene = new Scene(root);
        stage.setScene(scene);
