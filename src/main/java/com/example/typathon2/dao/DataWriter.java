@@ -4,7 +4,7 @@ import com.example.typathon2.Models.ProfilePage;
 
 public class DataWriter {
     public static void storeResultsNormal(int wpm, int acc, int score, int duration) {
-        Database.writeResult("insert into playerresults_normal values (?, ?, ?, ?, now(), )",
+        Database.writeResult("insert into playerresults_normal values (?, ?, ?, ?, now(), ?)",
                 ProfilePage.getCurrentUser(), wpm, acc, score, duration);
     }
     public static void storeResultsQuotes(int wpm, int acc, int score, int duration) {

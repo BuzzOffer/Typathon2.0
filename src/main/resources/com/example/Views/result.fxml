@@ -1,88 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #556B2F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" style="-fx-background-color: #556B2F;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.ResultPageController">
    <children>
-      <AnchorPane layoutX="27.0" layoutY="27.0" prefHeight="445.0" prefWidth="645.0" style="-fx-background-color: #A9A9A9;">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #556B2F;">
          <children>
-            <Text fill="CHARTREUSE" layoutX="41.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM">
-               <font>
-                  <Font name="Franklin Gothic Medium Cond" size="25.0" />
-               </font>
-            </Text>
-            <Text fx:id="wpmText" layoutX="26.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
-               <font>
-                  <Font name="Source Code Pro Black" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="CHARTREUSE" layoutX="90.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESULT PAGE" textAlignment="CENTER" wrappingWidth="465.39996337890625">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="35.0" />
-               </font>
-            </Text>
-            <Text fill="CHARTREUSE" layoutX="14.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACCURACY">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="25.0" />
-               </font>
-            </Text>
-            <Text fx:id="accuracyText" layoutX="26.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
-               <font>
-                  <Font name="Source Code Pro Black" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="CHARTREUSE" layoutX="19.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME MODE &#10;DETAILS" textAlignment="CENTER">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="19.0" />
-               </font>
-            </Text>
-            <Text fx:id="gameModeDetailsText" layoutX="26.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
-               <font>
-                  <Font name="Source Code Pro Black" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="CHARTREUSE" layoutX="278.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCORE" textAlignment="CENTER">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="25.0" />
-               </font>
-            </Text>
-            <Text fx:id="scoreText" layoutX="272.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
-               <font>
-                  <Font name="Source Code Pro Black" size="30.0" />
-               </font>
-            </Text>
-            <Text fill="CHARTREUSE" layoutX="483.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME USED" textAlignment="CENTER">
-               <font>
-                  <Font name="Franklin Gothic Demi Cond" size="25.0" />
-               </font>
-            </Text>
-            <Text fx:id="timeusedText" layoutX="497.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
-               <font>
-                  <Font name="Source Code Pro Black" size="30.0" />
-               </font>
-            </Text>
-            <LineChart fx:id="wpmChart" layoutX="108.0" layoutY="62.0" prefHeight="108.0" prefWidth="531.0">
-               <xAxis>
-                  <CategoryAxis side="BOTTOM" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis side="LEFT" />
-               </yAxis>
-            </LineChart>
-            <LineChart fx:id="accuracyChart" layoutX="108.0" layoutY="211.0" prefHeight="108.0" prefWidth="531.0">
-               <xAxis>
-                  <CategoryAxis side="BOTTOM" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis side="LEFT" />
-               </yAxis>
-            </LineChart>
+            <AnchorPane layoutX="27.0" layoutY="27.0" prefHeight="445.0" prefWidth="645.0" style="-fx-background-color: #A9A9A9;">
+               <children>
+                  <Text fill="CHARTREUSE" layoutX="41.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM">
+                     <font>
+                        <Font name="Franklin Gothic Medium Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="wpmText" layoutX="26.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="CHARTREUSE" layoutX="90.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESULT PAGE" textAlignment="CENTER" wrappingWidth="465.39996337890625">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="35.0" />
+                     </font>
+                  </Text>
+                  <Text fill="CHARTREUSE" layoutX="14.0" layoutY="231.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ACCURACY">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="accuracyText" layoutX="26.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                     </font>
+                  </Text>
+                  <Text fill="CHARTREUSE" layoutX="19.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="GAME MODE &#10;DETAILS" textAlignment="CENTER">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="19.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="gameModeDetailsText" layoutX="26.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="CHARTREUSE" layoutX="278.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SCORE" textAlignment="CENTER">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="scoreText" layoutX="272.0" layoutY="426.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fill="CHARTREUSE" layoutX="483.0" layoutY="379.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TIME USED" textAlignment="CENTER">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="25.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="timeusedText" layoutX="497.0" layoutY="427.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="77.59996795654297">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                     </font>
+                  </Text>
+                  <LineChart fx:id="wpmChart" layoutX="108.0" layoutY="62.0" prefHeight="108.0" prefWidth="531.0">
+                     <xAxis>
+                        <NumberAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+                  <LineChart fx:id="accuracyChart" layoutX="108.0" layoutY="211.0" prefHeight="108.0" prefWidth="531.0">
+                     <xAxis>
+                        <NumberAxis side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis side="LEFT" />
+                     </yAxis>
+                  </LineChart>
+               </children>
+               <Button fx:id="tryAgain" layoutX="550.0" layoutY="10.0" mnemonicParsing="false" onAction="#handletryAgainButton" style="-fx-background-color: black;" text="Try Again" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="25.0" />
+            </AnchorPane>
          </children>
       </AnchorPane>
    </children>
-</AnchorPane>
+</VBox>

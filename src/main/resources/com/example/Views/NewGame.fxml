@@ -2,7 +2,6 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckMenuItem?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
@@ -12,133 +11,149 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="651.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.NewGameController">
+<?import javafx.scene.layout.Region?>
+<VBox alignment="CENTER" style="-fx-background-color: linear-gradient(to left, #4f6654, #46595e);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.typathon2.Controllers.NewGameController">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0">
-         <top>
-            <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
-               <children>
-                  <HBox layoutX="62.0" layoutY="24.0" prefHeight="42.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-9.199999999999932" AnchorPane.topAnchor="24.0">
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="651.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="600.0">
+               <top>
+                  <AnchorPane prefHeight="65.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
                      <children>
-                        <Pane>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
+                        <HBox layoutX="62.0" layoutY="24.0" prefHeight="42.0" prefWidth="598.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="-9.199999999999932" AnchorPane.topAnchor="24.0" AnchorPane.leftAnchor="5.0">
+                           <children>
+                              <Pane>
+                                 <Button onAction="#goBack" prefHeight="30.0" prefWidth="80.0" text="Back" />
+                                 <HBox.margin>
+                                    <Insets right="70.0" top="10.0"/>
+                                 </HBox.margin>
+                              </Pane>
+
+                              <SplitMenuButton fx:id="wordsButton" mnemonicParsing="false" onAction="#handleWordsAction" prefHeight="30.0" prefWidth="125.0" text="Words" textAlignment="CENTER">
+                                 <items>
+                                    <MenuItem fx:id="tenWordsItem" mnemonicParsing="false" onAction="#handleTenWordsAction" text="10 words">
+                                    </MenuItem>
+                                    <MenuItem fx:id="twentyFiveWordsItem" mnemonicParsing="false" onAction="#handleTwentyFiveWordsAction" text="25 words">
+                                    </MenuItem>
+                                    <MenuItem fx:id="fiftyWordsItem" mnemonicParsing="false" onAction="#handleFiftyWordsAction" text="50 words" />
+                                    <MenuItem fx:id="hundredWordsItem" mnemonicParsing="false" onAction="#handleHundredWordsAction" text="100 words" />
+                                 </items>
+                                 <HBox.margin>
+                                    <Insets right="70.0" top="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </SplitMenuButton>
+                              <SplitMenuButton fx:id="mainGameButton" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="125.0" text="Main Game">
+                                 <items>
+                                    <MenuItem fx:id="mainGamefifteenSecondsItem" mnemonicParsing="false" onAction="#handlemainGameFifteenSecondsAction" text="15 seconds">
+                                    </MenuItem>
+                                    <MenuItem fx:id="mainGamethirtySecondsItem" mnemonicParsing="false" onAction="#handlemainGameThirtySecondsAction" text="30 seconds" />
+                                    <MenuItem fx:id="mainGamefortyFiveSecondsItem" mnemonicParsing="false" onAction="#handlemainGameFortyFiveSecondsAction" text="45 seconds" />
+                                    <MenuItem fx:id="mainGamesixtySecondsItem" mnemonicParsing="false" onAction="#handlemainGameSixtySecondsAction" text="60 seconds" />
+                                    <MenuItem fx:id="mainGamewithPunctuationItem" mnemonicParsing="false" onAction="#handlemainGameWithPunctuationAction" text="With Punctuation" />
+                                    <MenuItem fx:id="mainGamesuddenDeathItem" mnemonicParsing="false" onAction="#handlemainGameSuddenDeathAction" text="Sudden Death">
+                                    </MenuItem>
+                                 </items>
+                                 <HBox.margin>
+                                    <Insets right="70.0" top="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </SplitMenuButton>
+                              <SplitMenuButton fx:id="quotesButton" layoutX="154.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleQuotesAction" prefHeight="30.0" prefWidth="125.0" text="Quotes">
+                                 <HBox.margin>
+                                    <Insets right="15.0" top="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </SplitMenuButton>
+                           </children>
+                        </HBox>
+                        <Pane layoutY="-4.0" prefHeight="35.0" prefWidth="651.0" style="-fx-background-color: linear-gradient(to left, #4f6654, #46595e);">
+                           <children>
+                              <ImageView fx:id="logo" fitHeight="66.0" fitWidth="89.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../../../FirstJavaFXProject/src/Test/images/Black%20&amp;%20White%20Minimalist%20Business%20Logo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
                         </Pane>
-                        <SplitMenuButton fx:id="wordsButton" mnemonicParsing="false" onAction="#handleWordsAction" prefHeight="30.0" prefWidth="125.0" text="Words" textAlignment="CENTER">
-                           <items>
-                              <MenuItem fx:id="tenWordsItem" mnemonicParsing="false" onAction="#handleTenWordsAction" text="10 words">
-                              </MenuItem>
-                              <MenuItem fx:id="twentyFiveWordsItem" mnemonicParsing="false" onAction="#handleTwentyFiveWordsAction" text="25 words">
-                              </MenuItem>
-                              <MenuItem fx:id="fiftyWordsItem" mnemonicParsing="false" onAction="#handleFiftyWordsAction" text="50 words" />
-                              <MenuItem fx:id="hundredWordsItem" mnemonicParsing="false" onAction="#handleHundredWordsAction" text="100 words" />
-                           </items>
-                           <HBox.margin>
-                              <Insets right="70.0" top="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </SplitMenuButton>
-                        <SplitMenuButton fx:id="mainGameButton" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleMainGameAction" prefHeight="30.0" prefWidth="125.0" text="Main Game">
-                           <items>
-                              <MenuItem fx:id="mainGamefifteenSecondsItem" mnemonicParsing="false" onAction="#handlemainGameFifteenSecondsAction" text="15 seconds">
-                              </MenuItem>
-                              <MenuItem fx:id="mainGamethirtySecondsItem" mnemonicParsing="false" onAction="#handlemainGameThirtySecondsAction" text="30 seconds" />
-                              <MenuItem fx:id="mainGamefortyFiveSecondsItem" mnemonicParsing="false" onAction="#handlemainGameFortyFiveSecondsAction" text="45 seconds" />
-                              <MenuItem fx:id="mainGamesixtySecondsItem" mnemonicParsing="false" onAction="#handlemainGameSixtySecondsAction" text="60 seconds" />
-                              <MenuItem fx:id="mainGamewithPunctuationItem" mnemonicParsing="false" onAction="#handlemainGameWithPunctuationAction" text="With Punctuation" />
-                              <MenuItem fx:id="mainGamesuddenDeathItem" mnemonicParsing="false" onAction="#handlemainGameSuddenDeathAction" text="Sudden Death">
-                              </MenuItem>
-                           </items>
-                           <HBox.margin>
-                              <Insets right="70.0" top="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </SplitMenuButton>
-                        <SplitMenuButton fx:id="quotesButton" layoutX="154.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleQuotesAction" prefHeight="30.0" prefWidth="125.0" text="Quotes">
-                           <items>
-                              <CheckMenuItem mnemonicParsing="false" text="Without punctuation" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleQuotesFifteenSecondsAction" text="15 seconds">
-                              </MenuItem>
-                              <MenuItem mnemonicParsing="false" onAction="#handleQuotesThirtySecondsAction" text="30 seconds" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleQuotesFortyFiveSecondsAction" text="45 seconds" />
-                              <MenuItem mnemonicParsing="false" onAction="#handleQuotesSixtySecondsAction" text="60 seconds" />
-                              <MenuItem mnemonicParsing="false" text="Sudden Death">
-                              </MenuItem>
-                           </items>
-                           <HBox.margin>
-                              <Insets right="15.0" top="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font size="13.0" />
-                           </font>
-                        </SplitMenuButton>
                      </children>
-                  </HBox>
-                  <Pane layoutY="-4.0" prefHeight="35.0" prefWidth="651.0" style="-fx-background-color: linear-gradient(to left, #4f6654, #46595e);">
+                  </AnchorPane>
+               </top>
+               <right>
+                  <AnchorPane fx:id="an" prefHeight="334.0" prefWidth="651.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
                      <children>
-                        <ImageView fx:id="logo" fitHeight="66.0" fitWidth="89.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../FirstJavaFXProject/src/Test/images/Black%20&amp;%20White%20Minimalist%20Business%20Logo.png" />
-                           </image>
-                        </ImageView>
+                        <Circle fill="#5b695f" layoutX="248.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#5b695f" layoutX="398.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#5b695f" layoutX="529.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Circle fill="#5b695f" layoutX="115.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Text fill="WHITE" layoutX="226.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mistakes">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fill="#fffefe" layoutX="386.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" layoutX="509.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accuracy">
+                           <font>
+                              <Font name="Franklin Gothic Medium Cond" size="12.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="mistakesText" fill="WHITE" layoutX="240.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="wpmText" fill="WHITE" layoutX="390.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="accuracyText" fill="WHITE" layoutX="521.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="second" fill="WHITE" layoutX="94.0" layoutY="286.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Left">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="12.0" />
+                           </font>
+                        </Text>
+                        <Button fx:id="restart" onAction="#handleRestartButton" layoutX="289.0" layoutY="289.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Restart" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="289.0" />
+                        <Button fx:id="results" onAction="#handleResultButton" layoutX="579.0" layoutY="289.0" mnemonicParsing="false" style="-fx-background-color: black;" text="Results" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="289.0" />
+                        <Text fx:id="timerText" fill="WHITE" layoutX="107.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" textAlignment="CENTER">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="30.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="userTextField" alignment="CENTER" layoutX="62.0" layoutY="170.0" onKeyPressed="#handleEnterKeyPressed" prefHeight="22.0" prefWidth="526.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;">
+                           <font>
+                              <Font name="Franklin Gothic Demi Cond" size="16.0" />
+                           </font>
+                        </TextField>
+                        <Text fx:id="someTextField" fill="WHITE" layoutX="16.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Instructions: For the main game, if you run out of words, press Enter for the next set of words. For Words gamemode, enter after you type each word that pops up. For quotes, just type the quote shown." textAlignment="CENTER" wrappingWidth="619.73681640625">
+                           <font>
+                              <Font name="Franklin Gothic Medium Cond" size="20.0" />
+                           </font>
+                        </Text>
                      </children>
-                  </Pane>
-               </children>
-            </AnchorPane>
-         </top>
-         <right>
-            <AnchorPane fx:id="an" prefHeight="334.0" prefWidth="651.0" style="-fx-background-color: grey;" BorderPane.alignment="CENTER">
-               <children>
-                  <Circle fill="#5b695f" layoutX="248.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fill="#5b695f" layoutX="398.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fill="#5b695f" layoutX="529.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Circle fill="#5b695f" layoutX="115.0" layoutY="242.0" radius="33.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Text fill="WHITE" layoutX="225.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mistakes" />
-                  <Text fill="#fffefe" layoutX="384.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WPM" />
-                  <Text fill="WHITE" layoutX="505.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Accuracy" />
-                  <Text fx:id="mistakesText" fill="WHITE" layoutX="240.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="wpmText" fill="WHITE" layoutX="390.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="accuracyText" fill="WHITE" layoutX="505.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Text>
-                  <Text fx:id="second" fill="WHITE" layoutX="90.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time Left" />
-                  <Button fx:id="playAgain" layoutX="290.0" layoutY="294.0" mnemonicParsing="false" onAction="#handlePlayAction" style="-fx-background-color: black;" text="Play" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="294.0" />
-                  <Text fx:id="timerText" fill="WHITE" layoutX="106.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
-                     <font>
-                        <Font size="30.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="someTextField" alignment="CENTER" layoutX="62.0" layoutY="22.0" prefHeight="77.0" prefWidth="526.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;">
-                     <font>
-                        <Font name="Comic Sans MS" size="16.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="userTextField" alignment="CENTER" layoutX="62.0" layoutY="114.0" onKeyPressed="#handleEnterKeyPressed" prefHeight="77.0" prefWidth="526.0" style="-fx-background-color: transparent; -fx-text-fill: WHITE;">
-                     <font>
-                        <Font name="Comic Sans MS" size="16.0" />
-                     </font>
-                  </TextField>
-               </children></AnchorPane>
-         </right>
-      </BorderPane>
+                  </AnchorPane>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</VBox>
